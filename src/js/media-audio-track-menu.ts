@@ -13,7 +13,7 @@ import {
 import { parseAudioTrackList } from './utils/utils.js';
 
 /**
- * @slot - Default slotted elements.
+ * @slot - Default slotted elements.node
  * @slot header - An element shown at the top of the menu.
  * @slot checked-indicator - An icon element indicating a checked menu-item.
  *
