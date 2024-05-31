@@ -1,7 +1,7 @@
 import { MediaUIAttributes, MediaUIEvents } from '../constants.js';
 import type { TextTrackLike } from '../utils/TextTrackLike.js';
 import { getStringAttr, setStringAttr } from '../utils/element-utils.js';
-import { globalThis } from '../utils/server-safe-globals.js';
+
 import { parseAudioTrackList } from '../utils/utils.js';
 import {
   MediaChromeListbox,

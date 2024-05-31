@@ -9,7 +9,7 @@ import {
   parseTracks,
   updateTracksModeTo,
 } from '../utils/captions.js';
-import { globalThis } from '../utils/server-safe-globals.js';
+
 import type { MediaState } from './media-store.js';
 import type { StateMediator, StateOwners } from './state-mediator.js';
 import { getSubtitleTracks, toggleSubtitleTracks } from './util.js';

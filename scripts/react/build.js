@@ -1,8 +1,8 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-import { fileURLToPath } from 'url';
-import path from 'path';
 import fs from 'fs';
+import { createRequire } from 'module';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const require = createRequire(import.meta.url);
 const { dirname } = path;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -246,18 +246,15 @@ const entryPoints = [
   path.join(projectRoot, 'dist', 'media-theme-element.js'),
 ];
 const setupGlobalsAsync = async () => {
-  const customElementNames = await import(
-    path.join(projectRoot, 'dist', 'utils', 'server-safe-globals.js')
-  ).then((exports) => {
-    Object.assign(globalThis, exports.globalThis);
-    globalThis.customElementNames = [];
-    globalThis.customElements.define = (name, _classRef) =>
-      globalThis.customElementNames.push(name);
-    // NOTE: The current implementation relies on the fact that `customElementNames` will be mutated
-    // to add the Custom Element html name for every element that's defined as a result of loading/importing the entryPoints modules (CJP).
-    return globalThis.customElementNames;
-  });
-  return customElementNames;
+  console.log(globalThis.navigator);
+  const exports = await import('./server-safe-globals.js');
+  Object.assign(globalThis, exports.globalThis);
+  globalThis.customElementNames = [];
+  globalThis.customElements.define = (name, _classRef) =>
+    globalThis.customElementNames.push(name);
+  // NOTE: The current implementation relies on the fact that `customElementNames` will be mutated
+  // to add the Custom Element html name for every element that's defined as a result of loading/importing the entryPoints modules (CJP).
+  return globalThis.customElementNames;
 };
 
 createReactWrapperModules({ entryPoints, setupGlobalsAsync, distRoot });

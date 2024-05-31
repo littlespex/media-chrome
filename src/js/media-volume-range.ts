@@ -9,7 +9,6 @@ import {
   setNumericAttr,
   setStringAttr,
 } from './utils/element-utils.js';
-import { globalThis } from './utils/server-safe-globals.js';
 
 const DEFAULT_VOLUME = 1;
 

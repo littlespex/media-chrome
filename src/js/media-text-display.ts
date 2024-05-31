@@ -1,8 +1,7 @@
 import { MediaStateReceiverAttributes } from './constants.js';
 import type MediaController from './media-controller.js';
-import { CustomElement } from './utils/CustomElement.js';
 import { getOrInsertCSSRule } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
+
 // Todo: Use data locals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
 
 const template: HTMLTemplateElement = document.createElement('template');
@@ -71,7 +70,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty --media-font-size - `font-size` property.
  * @cssproperty --media-text-content-height - `line-height` of text.
  */
-class MediaTextDisplay extends CustomElement {
+class MediaTextDisplay extends HTMLElement {
   #mediaController: MediaController | null;
 
   static get observedAttributes(): string[] {

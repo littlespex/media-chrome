@@ -1,10 +1,8 @@
-import { CustomElement } from './utils/CustomElement.js';
 import {
   containsComposedNode,
   getActiveElement,
 } from './utils/element-utils.js';
 import type { InvokeEvent } from './utils/events.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 template.innerHTML = /*html*/ `
@@ -80,7 +78,7 @@ export const Attributes = {
  * @cssproperty --media-font-size - `font-size` property.
  * @cssproperty --media-text-content-height - `line-height` of text.
  */
-class MediaChromeDialog extends CustomElement {
+class MediaChromeDialog extends HTMLElement {
   static template: HTMLTemplateElement = template;
 
   static get observedAttributes() {

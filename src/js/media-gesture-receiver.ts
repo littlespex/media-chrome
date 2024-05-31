@@ -4,13 +4,11 @@ import {
   MediaUIEvents,
   PointerTypes,
 } from './constants.js';
-import { CustomElement } from './utils/CustomElement.js';
 import {
   closestComposedNode,
   getBooleanAttr,
   setBooleanAttr,
 } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 
@@ -32,7 +30,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty --media-gesture-receiver-display - `display` property of gesture receiver.
  * @cssproperty --media-control-display - `display` property of control.
  */
-class MediaGestureReceiver extends CustomElement {
+class MediaGestureReceiver extends HTMLElement {
   #mediaController;
 
   // NOTE: Currently "baking in" actions + attrs until we come up with

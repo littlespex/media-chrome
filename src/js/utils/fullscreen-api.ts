@@ -1,5 +1,3 @@
-import { document } from './server-safe-globals.js';
-
 export const fullscreenApi = {
   enter: 'requestFullscreen',
   exit: 'exitFullscreen',
@@ -13,7 +11,7 @@ export const fullscreenApi = {
 if (document.fullscreenElement === undefined) {
   fullscreenApi.enter = 'webkitRequestFullScreen';
   fullscreenApi.exit =
-    document.webkitExitFullscreen != null
+    (document as any).webkitExitFullscreen != null
       ? 'webkitExitFullscreen'
       : 'webkitCancelFullScreen';
   fullscreenApi.rootEvents = ['webkitfullscreenchange'];

@@ -1,5 +1,4 @@
 import { MediaChromeMenuItem } from './media-chrome-menu-item.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 template.innerHTML =

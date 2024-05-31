@@ -3,13 +3,11 @@ import {
   MediaUIAttributes,
 } from './constants.js';
 import type MediaController from './media-controller.js';
-import { CustomElement } from './utils/CustomElement.js';
 import {
   getOrInsertCSSRule,
   getStringAttr,
   setStringAttr,
 } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 template.innerHTML = /*html*/ `
@@ -37,7 +35,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty [--media-preview-thumbnail-display = inline-block] - `display` property of display.
  * @cssproperty [--media-control-display = inline-block] - `display` property of control.
  */
-class MediaPreviewThumbnail extends CustomElement {
+class MediaPreviewThumbnail extends HTMLElement {
   #mediaController: MediaController;
 
   static get observedAttributes() {

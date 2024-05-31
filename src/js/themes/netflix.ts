@@ -8,7 +8,6 @@
 */
 
 import { MediaThemeElement } from '../media-theme-element.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 template.innerHTML = /*html*/ `

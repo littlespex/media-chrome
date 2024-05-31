@@ -1,6 +1,4 @@
-import { CustomElement } from './utils/CustomElement.js';
 import { getStringAttr, setStringAttr } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 export const Attributes = {
   PLACEHOLDER_SRC: 'placeholdersrc',
@@ -50,7 +48,7 @@ const setBackgroundImage = (el: HTMLElement, image: string): void => {
  * @cssproperty --media-object-fit - `object-fit` of poster image.
  * @cssproperty --media-object-position - `object-position` of poster image.
  */
-class MediaPosterImage extends CustomElement {
+class MediaPosterImage extends HTMLElement {
   static get observedAttributes(): string[] {
     return [Attributes.PLACEHOLDER_SRC, Attributes.SRC];
   }

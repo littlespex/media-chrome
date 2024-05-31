@@ -18,7 +18,6 @@ import { MediaContainer } from './media-container.js';
 import createMediaStore, {
   type MediaStore,
 } from './media-store/media-store.js';
-import { CustomElement } from './utils/CustomElement.js';
 import { AttributeTokenList } from './utils/attribute-token-list.js';
 import { stringifyTextTrackList } from './utils/captions.js';
 import {
@@ -26,7 +25,7 @@ import {
   setNumericAttr,
   setStringAttr,
 } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
+
 import {
   delay,
   stringifyAudioTrackList,
@@ -570,13 +569,13 @@ const MEDIA_UI_ATTRIBUTE_NAMES = Object.values(MediaUIAttributes);
 const MEDIA_UI_PROP_NAMES = Object.values(MediaUIProps);
 
 const getMediaUIAttributesFrom = (child: HTMLElement): string[] => {
-  let { observedAttributes } = child.constructor as typeof CustomElement;
+  let { observedAttributes } = child.constructor as any;
 
   // observedAttributes are only available if the custom element was upgraded.
   // example: media-gesture-receiver in the shadow DOM requires an upgrade.
   if (!observedAttributes && child.nodeName?.includes('-')) {
     globalThis.customElements.upgrade(child);
-    ({ observedAttributes } = child.constructor as typeof CustomElement);
+    ({ observedAttributes } = child.constructor as any);
   }
 
   const mediaChromeAttributesList = child

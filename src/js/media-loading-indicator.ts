@@ -4,13 +4,11 @@ import {
 } from './constants.js';
 import { nouns } from './labels/labels.js';
 import type MediaController from './media-controller.js';
-import { CustomElement } from './utils/CustomElement.js';
 import {
   getBooleanAttr,
   getOrInsertCSSRule,
   setBooleanAttr,
 } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 export const Attributes = {
   LOADING_DELAY: 'loadingdelay',
@@ -109,7 +107,7 @@ svg, img, ::slotted(svg), ::slotted(img) {
  * @cssproperty --media-loading-indicator-icon-width - `width` of loading icon.
  * @cssproperty [ --media-loading-indicator-icon-height = 100px ] - `height` of loading icon.
  */
-class MediaLoadingIndicator extends CustomElement {
+class MediaLoadingIndicator extends HTMLElement {
   #mediaController: MediaController;
   #delay = DEFAULT_LOADING_DELAY;
 

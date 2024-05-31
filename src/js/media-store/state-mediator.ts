@@ -16,7 +16,7 @@ import {
   hasVolumeSupportAsync,
   pipSupported,
 } from '../utils/platform-tests.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
+
 import {
   getShowingSubtitleTracks,
   getSubtitleTracks,
@@ -388,7 +388,7 @@ export const stateMediator: StateMediator = {
           );
           if (volumePref == null) return;
           stateMediator.mediaVolume.set(+volumePref, stateOwners);
-          handler(volumePref);
+          handler(parseFloat(volumePref));
         } catch (e) {
           console.debug('Error getting volume pref', e);
         }

@@ -7,7 +7,6 @@ import {
   setBooleanAttr,
   setStringAttr,
 } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const pipIcon = `<svg aria-hidden="true" viewBox="0 0 28 24">
   <path d="M24 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Zm-1 16H5V5h18v14Zm-3-8h-7v5h7v-5Z"/>

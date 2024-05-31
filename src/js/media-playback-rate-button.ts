@@ -3,7 +3,6 @@ import { nouns } from './labels/labels.js';
 import { MediaChromeButton } from './media-chrome-button.js';
 import { AttributeTokenList } from './utils/attribute-token-list.js';
 import { getNumericAttr, setNumericAttr } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 export const Attributes = {
   RATES: 'rates',

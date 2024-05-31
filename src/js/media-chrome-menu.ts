@@ -1,4 +1,6 @@
 import { MediaStateReceiverAttributes } from './constants.js';
+import type { MediaChromeMenuItem } from './media-chrome-menu-item.js';
+import type MediaController from './media-controller.js';
 import { computePosition } from './utils/anchor-utils.js';
 import {
   closestComposedNode,
@@ -11,11 +13,6 @@ import {
 } from './utils/element-utils.js';
 import { InvokeEvent, ToggleEvent } from './utils/events.js';
 import { observeResize, unobserveResize } from './utils/resize-observer.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
-
-import type { MediaChromeMenuItem } from './media-chrome-menu-item.js';
-import type MediaController from './media-controller.js';
-import { CustomElement } from './utils/CustomElement.js';
 
 export function createMenuItem({
   type,
@@ -28,7 +25,9 @@ export function createMenuItem({
   value: string;
   checked: boolean;
 }) {
-  const item = document.createElement('media-chrome-menu-item');
+  const item = document.createElement(
+    'media-chrome-menu-item'
+  ) as MediaChromeMenuItem;
 
   item.type = type ?? '';
 
@@ -287,7 +286,7 @@ export const Attributes = {
  * @cssproperty --media-menu-item-checked-background - `background` of checked menu item.
  * @cssproperty --media-menu-item-max-width - `max-width` of menu item text.
  */
-class MediaChromeMenu extends CustomElement {
+class MediaChromeMenu extends HTMLElement {
   static template: HTMLTemplateElement = template;
 
   static get observedAttributes(): string[] {

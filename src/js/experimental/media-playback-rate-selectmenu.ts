@@ -1,5 +1,6 @@
+import type MediaChromeButton from '../media-chrome-button.js';
 import '../media-playback-rate-button.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
+
 import { MediaChromeSelectMenu } from './media-chrome-selectmenu.js';
 import './media-playback-rate-listbox.js';
 
@@ -12,7 +13,7 @@ class MediaPlaybackRateSelectMenu extends MediaChromeSelectMenu {
   init(): void {
     const playbackRateButton = document.createElement(
       'media-playback-rate-button'
-    );
+    ) as MediaChromeButton;
     playbackRateButton.part.add('button');
     playbackRateButton.preventClick = true;
 

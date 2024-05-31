@@ -1,8 +1,6 @@
 import { MediaStateReceiverAttributes } from './constants.js';
 import MediaController from './media-controller.js';
-import { CustomElement } from './utils/CustomElement.js';
 import { getOrInsertCSSRule } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 
@@ -94,7 +92,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty --media-button-icon-transform - `transform` of button icon.
  * @cssproperty --media-button-icon-transition - `transition` of button icon.
  */
-class MediaChromeButton extends CustomElement {
+class MediaChromeButton extends HTMLElement {
   #mediaController: MediaController | null;
   preventClick = false;
   nativeEl: HTMLElement;

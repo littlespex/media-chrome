@@ -5,7 +5,7 @@ import {
   parseTextTracksStr,
   stringifyTextTrackList,
 } from '../utils/captions.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
+
 import {
   MediaChromeListbox,
   createIndicator,

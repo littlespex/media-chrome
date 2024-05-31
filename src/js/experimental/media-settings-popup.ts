@@ -1,8 +1,5 @@
 // Work in progress
 
-import { CustomElement } from '../utils/CustomElement.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
-
 const template: HTMLTemplateElement = document.createElement('template');
 
 template.innerHTML = `
@@ -39,7 +36,7 @@ template.innerHTML = `
   </media-chrome-menu>
 `;
 
-class MediaSettingsPopup extends CustomElement {
+class MediaSettingsPopup extends HTMLElement {
   constructor() {
     super();
 

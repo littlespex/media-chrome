@@ -1,7 +1,7 @@
 import { MediaUIAttributes } from './constants.js';
 import { MediaTextDisplay } from './media-text-display.js';
 import { getNumericAttr, setNumericAttr } from './utils/element-utils.js';
-import { globalThis } from './utils/server-safe-globals.js';
+
 import { formatTime } from './utils/time.js';
 // Todo: Use data locals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
 

@@ -1,6 +1,5 @@
 import { MediaStateReceiverAttributes } from '../constants.js';
 import '../media-chrome-button.js';
-import { CustomElement } from '../utils/CustomElement.js';
 import {
   closestComposedNode,
   containsComposedNode,
@@ -8,7 +7,7 @@ import {
   getOrInsertCSSRule,
 } from '../utils/element-utils.js';
 import { observeResize, unobserveResize } from '../utils/resize-observer.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
+
 import './media-chrome-listbox.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
@@ -75,7 +74,7 @@ template.innerHTML = /*html*/ `
  * @csspart button - The default button that's in the shadow DOM.
  * @csspart listbox - The default listbox that's in the shadow DOM.
  */
-class MediaChromeSelectMenu extends CustomElement {
+class MediaChromeSelectMenu extends HTMLElement {
   #mediaController;
   #button;
   #buttonSlot;

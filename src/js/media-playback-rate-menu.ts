@@ -11,7 +11,6 @@ import {
   getNumericAttr,
   setNumericAttr,
 } from './utils/element-utils.js';
-import { globalThis } from './utils/server-safe-globals.js';
 
 export const Attributes = {
   RATES: 'rates',

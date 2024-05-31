@@ -1,6 +1,4 @@
 import { MediaUIAttributes, MediaUIEvents } from '../../constants.js';
-import { CustomElement } from '../../utils/CustomElement.js';
-import { document, globalThis } from '../../utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 
@@ -137,7 +135,7 @@ template.innerHTML = `
 /**
  *
  */
-class MediaClipSelector extends CustomElement {
+class MediaClipSelector extends HTMLElement {
   static get observedAttributes() {
     return [
       'thumbnails',

@@ -1,8 +1,8 @@
+import { MediaUIAttributes } from '../constants.js';
+import type MediaChromeButton from '../media-chrome-button.js';
 import { MediaChromeSelectMenu } from './media-chrome-selectmenu.js';
 import './media-rendition-button.js';
 import './media-rendition-listbox.js';
-import { MediaUIAttributes } from '../constants.js';
-import { globalThis, document } from '../utils/server-safe-globals.js';
 
 /**
  * @attr {string} mediarenditionselected - (read-only) Set to the selected rendition id.
@@ -22,7 +22,9 @@ class MediaRenditionSelectMenu extends MediaChromeSelectMenu {
   }
 
   init(): void {
-    const renditionButton = document.createElement('media-rendition-button');
+    const renditionButton = document.createElement(
+      'media-rendition-button'
+    ) as MediaChromeButton;
     renditionButton.part.add('button');
     renditionButton.preventClick = true;
 

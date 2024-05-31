@@ -10,10 +10,9 @@
 import { MediaStateChangeEvents, MediaUIAttributes } from './constants.js';
 import { nouns } from './labels/labels.js';
 import { observeResize } from './utils/resize-observer.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
+
 // Guarantee that `<media-gesture-receiver/>` is available for use in the template
 import './media-gesture-receiver.js';
-import { CustomElement } from './utils/CustomElement.js';
 
 export const Attributes = {
   AUDIO: 'audio',
@@ -284,7 +283,7 @@ function getBreakpoints(breakpoints: Record<string, string>, width: number) {
  * @cssprop --media-background-color - `background-color` of container.
  * @cssprop --media-slot-display - `display` of the media slot (default none for [audio] usage).
  */
-class MediaContainer extends CustomElement {
+class MediaContainer extends HTMLElement {
   static get observedAttributes(): string[] {
     return (
       [Attributes.AUTOHIDE, Attributes.GESTURES_DISABLED]

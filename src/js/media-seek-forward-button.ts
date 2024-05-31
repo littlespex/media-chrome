@@ -7,7 +7,6 @@ import {
   setNumericAttr,
   updateIconText,
 } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 export const Attributes = {
   SEEK_OFFSET: 'seekoffset',

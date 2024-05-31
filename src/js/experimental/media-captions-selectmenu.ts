@@ -1,7 +1,7 @@
-import { MediaChromeSelectMenu } from './media-chrome-selectmenu.js';
 import '../media-captions-button.js';
+import type MediaChromeButton from '../media-chrome-button.js';
 import './media-captions-listbox.js';
-import { globalThis, document } from '../utils/server-safe-globals.js';
+import { MediaChromeSelectMenu } from './media-chrome-selectmenu.js';
 
 /**
  * @csspart button - The default button that's in the shadow DOM.
@@ -10,7 +10,9 @@ import { globalThis, document } from '../utils/server-safe-globals.js';
  */
 class MediaCaptionsSelectMenu extends MediaChromeSelectMenu {
   init() {
-    const captionsButton = document.createElement('media-captions-button');
+    const captionsButton = document.createElement(
+      'media-captions-button'
+    ) as MediaChromeButton;
     captionsButton.part.add('button');
     captionsButton.preventClick = true;
 

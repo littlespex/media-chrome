@@ -2,7 +2,7 @@ import { MediaUIAttributes, MediaUIEvents } from '../constants.js';
 import { DEFAULT_RATE, DEFAULT_RATES } from '../media-playback-rate-button.js';
 import { AttributeTokenList } from '../utils/attribute-token-list.js';
 import { getNumericAttr, setNumericAttr } from '../utils/element-utils.js';
-import { globalThis } from '../utils/server-safe-globals.js';
+
 import {
   MediaChromeListbox,
   createIndicator,

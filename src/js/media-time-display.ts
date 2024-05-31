@@ -8,7 +8,7 @@ import {
   setBooleanAttr,
   setNumericAttr,
 } from './utils/element-utils.js';
-import { globalThis } from './utils/server-safe-globals.js';
+
 import { formatAsTimePhrase, formatTime } from './utils/time.js';
 
 export const Attributes = {

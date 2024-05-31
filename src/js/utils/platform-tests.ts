@@ -1,5 +1,4 @@
 import { fullscreenApi } from './fullscreen-api.js';
-import { document, globalThis } from './server-safe-globals.js';
 import { delay } from './utils.js';
 
 /**

@@ -2,7 +2,6 @@ import { MediaUIAttributes, MediaUIEvents } from './constants.js';
 import { verbs } from './labels/labels.js';
 import { MediaChromeButton } from './media-chrome-button.js';
 import { getBooleanAttr, setBooleanAttr } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const playIcon = `<svg aria-hidden="true" viewBox="0 0 24 24">
   <path d="m6 21 15-9L6 3v18Z"/>

@@ -1,17 +1,17 @@
 class EventTarget {
-  addEventListener() {}
-  removeEventListener() {}
+  addEventListener() { }
+  removeEventListener() { }
   dispatchEvent() {
     return true;
   }
 }
 
-class Node extends EventTarget {}
+class Node extends EventTarget { }
 
 class ResizeObserver {
-  observe() {}
-  unobserve() {}
-  disconnect() {}
+  observe() { }
+  unobserve() { }
+  disconnect() { }
 }
 
 const documentShim = {
@@ -21,8 +21,8 @@ const documentShim = {
   createElementNS: function () {
     return new globalThisShim.HTMLElement();
   },
-  addEventListener() {},
-  removeEventListener() {},
+  addEventListener() { },
+  removeEventListener() { },
   /**
    *
    * @param {Event} event
@@ -39,12 +39,12 @@ const globalThisShim = {
   ResizeObserver,
   document: documentShim,
   Node: Node,
-  HTMLElement: class HTMLElement extends Node {},
-  DocumentFragment: class DocumentFragment extends EventTarget {},
+  HTMLElement: class HTMLElement extends Node { },
+  DocumentFragment: class DocumentFragment extends EventTarget { },
   customElements: {
-    get: function () {},
-    define: function () {},
-    whenDefined: function () {},
+    get: function () { },
+    define: function () { },
+    whenDefined: function () { },
   },
   localStorage: {
     /**
@@ -60,20 +60,18 @@ const globalThisShim = {
      * @param {string} key
      * @param {string} value
      */
-    setItem(key, value) {}, // eslint-disable-line
+    setItem(key, value) { }, // eslint-disable-line
     /**
      * @param {string} key
      */
-    removeItem(key) {}, // eslint-disable-line
+    removeItem(key) { }, // eslint-disable-line
   },
-  CustomEvent: function CustomEvent() {},
-  getComputedStyle: function () {},
-  navigator: {
-    languages: [],
-    get userAgent() {
-      return '';
-    },
-  },
+  CustomEvent: function CustomEvent() { },
+  getComputedStyle: function () { },
+  // navigator: {
+  //   languages: [],
+  //   userAgent: '',
+  // },
   /**
    * @param {string} media
    */

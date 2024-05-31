@@ -1,7 +1,6 @@
 import { nouns } from './labels/labels.js';
 import { MediaChromeMenuButton } from './media-chrome-menu-button.js';
 import { getMediaController } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const slotTemplate: HTMLTemplateElement = document.createElement('template');
 slotTemplate.innerHTML = /*html*/ `

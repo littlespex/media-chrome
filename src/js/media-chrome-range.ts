@@ -1,12 +1,10 @@
 import { MediaStateReceiverAttributes } from './constants.js';
-import { CustomElement } from './utils/CustomElement.js';
 import {
   getOrInsertCSSRule,
   getPointProgressOnLine,
   insertCSSRule,
 } from './utils/element-utils.js';
 import { observeResize, unobserveResize } from './utils/resize-observer.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 template.innerHTML = /*html*/ `
@@ -310,7 +308,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty --media-range-track-pointer-background - `background` of range track pointer.
  * @cssproperty --media-range-track-pointer-border-right - `border-right` of range track pointer.
  */
-class MediaChromeRange extends CustomElement {
+class MediaChromeRange extends HTMLElement {
   #mediaController;
   #isInputTarget;
   #startpoint;

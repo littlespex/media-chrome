@@ -1,7 +1,6 @@
 import { MediaStateReceiverAttributes } from '../constants.js';
 import type MediaController from '../media-controller.js';
-import { CustomElement } from '../utils/CustomElement.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
+
 import type MediaChromeOption from './media-chrome-option.js';
 
 const checkIcon = /*html*/ `
@@ -14,7 +13,9 @@ export function createOption(
   value: string,
   selected: boolean
 ): MediaChromeOption {
-  const option = document.createElement('media-chrome-option');
+  const option = document.createElement(
+    'media-chrome-option'
+  ) as MediaChromeOption;
   option.part.add('option');
   option.value = value;
   option.selected = selected;
@@ -163,7 +164,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty --media-option-indicator-vertical-align - `vertical-align` of option indicator.
  * @cssproperty --media-option-select-indicator-display - `display` of select indicator.
  */
-class MediaChromeListbox extends CustomElement {
+class MediaChromeListbox extends HTMLElement {
   static get observedAttributes(): string[] {
     return ['disabled', 'style', MediaStateReceiverAttributes.MEDIA_CONTROLLER];
   }

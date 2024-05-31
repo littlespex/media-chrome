@@ -1,11 +1,9 @@
 import { MediaChromeMenu } from './media-chrome-menu.js';
-import { CustomElement } from './utils/CustomElement.js';
 import {
   containsComposedNode,
   getDocumentOrShadowRoot,
 } from './utils/element-utils.js';
 import { InvokeEvent } from './utils/events.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 template.innerHTML = /*html*/ `
@@ -161,7 +159,7 @@ export const Attributes = {
  * @cssproperty --media-menu-item-indicator-fill - `fill` color of indicator icon.
  * @cssproperty --media-menu-item-indicator-height - `height` of menu-item indicator.
  */
-class MediaChromeMenuItem extends CustomElement {
+class MediaChromeMenuItem extends HTMLElement {
   static template = template;
 
   static get observedAttributes() {

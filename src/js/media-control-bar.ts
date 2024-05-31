@@ -1,12 +1,10 @@
 /*
   <media-control-bar>
 
-  Auto position contorls in a line and set some base colors
+  Auto position controls in a line and set some base colors
 */
-import { MediaStateReceiverAttributes } from './constants';
-import type MediaController from './media-controller';
-import { CustomElement } from './utils/CustomElement';
-import { document, globalThis } from './utils/server-safe-globals';
+import { MediaStateReceiverAttributes } from './constants.js';
+import type MediaController from './media-controller.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
 
@@ -44,7 +42,7 @@ template.innerHTML = /*html*/ `
  * @cssproperty --media-control-bar-display - `display` property of control bar.
  * @cssproperty --media-control-display - `display` property of control.
  */
-class MediaControlBar extends CustomElement {
+class MediaControlBar extends HTMLElement {
   #mediaController: MediaController | null;
 
   static get observedAttributes(): string[] {

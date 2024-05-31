@@ -1,7 +1,6 @@
 import { MediaStateChangeEvents } from './constants.js';
 import type MediaController from './media-controller.js';
-import { CustomElement } from './utils/CustomElement.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
+
 import { TemplateInstance } from './utils/template-parts.js';
 import { processor } from './utils/template-processor.js';
 import { camelCase, isNumericString } from './utils/utils.js';
@@ -47,7 +46,7 @@ prependTemplate.innerHTML = /*html*/ `
  *
  * @attr {string} template - The element `id` of the template to render.
  */
-export class MediaThemeElement extends CustomElement {
+export class MediaThemeElement extends HTMLElement {
   static template: HTMLTemplateElement;
   static observedAttributes: string[] = ['template'];
   static processor = processor;

@@ -11,7 +11,6 @@ import {
   stringifyTextTrackList,
 } from './utils/captions.js';
 import { getMediaController } from './utils/element-utils.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
 
 const ccIcon = /*html*/ `
   <svg aria-hidden="true" viewBox="0 0 26 24" part="captions-indicator indicator">

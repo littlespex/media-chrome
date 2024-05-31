@@ -1,5 +1,3 @@
-import { CustomElement } from '../utils/CustomElement.js';
-import { document, globalThis } from '../utils/server-safe-globals.js';
 import { MediaChromeListbox } from './media-chrome-listbox.js';
 
 const template: HTMLTemplateElement = document.createElement('template');
@@ -63,7 +61,7 @@ export const Attributes = {
  * @cssproperty --media-option-hover-outline-offset - `outline-offset` of hovered option.
  * @cssproperty --media-option-focus-shadow - `box-shadow` of the :focus-visible state
  */
-class MediaChromeOption extends CustomElement {
+class MediaChromeOption extends HTMLElement {
   static get observedAttributes(): string[] {
     return [Attributes.DISABLED, Attributes.SELECTED, Attributes.VALUE];
   }

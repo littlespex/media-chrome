@@ -1,6 +1,6 @@
 import { MediaChromeButton } from './media-chrome-button.js';
-import { globalThis, document } from './utils/server-safe-globals.js';
-import { MediaUIEvents, MediaUIAttributes } from './constants.js';
+
+import { MediaUIAttributes, MediaUIEvents } from './constants.js';
 import { verbs } from './labels/labels.js';
 import { getBooleanAttr, setBooleanAttr } from './utils/element-utils.js';
 

@@ -1,7 +1,6 @@
 import { MediaChromeButton } from './media-chrome-button.js';
 import { getDocumentOrShadowRoot } from './utils/element-utils.js';
 import { InvokeEvent } from './utils/events.js';
-import { globalThis } from './utils/server-safe-globals.js';
 
 /**
  * @attr {string} invoketarget - The id of the element to invoke when clicked.

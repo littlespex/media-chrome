@@ -193,11 +193,11 @@ export const updateTracksModeTo = (
     return preds.some((pred) => pred(textTrack));
   };
 
-  Array.from(tracks)
+  Array.from(tracks as any)
     // 1. Filter to only include tracks to update
     .filter(isTrackToUpdate)
     // 2. Update each of those tracks to the appropriate mode.
-    .forEach((textTrack) => {
+    .forEach((textTrack: any) => {
       textTrack.mode = mode;
     });
 };

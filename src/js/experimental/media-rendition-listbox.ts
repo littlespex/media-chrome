@@ -1,6 +1,6 @@
 import { MediaUIAttributes, MediaUIEvents } from '../constants.js';
 import { getStringAttr, setStringAttr } from '../utils/element-utils.js';
-import { globalThis } from '../utils/server-safe-globals.js';
+
 import { parseRenditionList } from '../utils/utils.js';
 import {
   MediaChromeListbox,

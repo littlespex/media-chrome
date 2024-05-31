@@ -17,7 +17,7 @@ import {
   setStringAttr,
 } from './utils/element-utils.js';
 import { RangeAnimation } from './utils/range-animation.js';
-import { document, globalThis } from './utils/server-safe-globals.js';
+
 import { formatAsTimePhrase } from './utils/time.js';
 
 type Rects = {
