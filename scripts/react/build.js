@@ -246,7 +246,6 @@ const entryPoints = [
   path.join(projectRoot, 'dist', 'media-theme-element.js'),
 ];
 const setupGlobalsAsync = async () => {
-  console.log(globalThis.navigator);
   const exports = await import('./server-safe-globals.js');
   Object.assign(globalThis, exports.globalThis);
   globalThis.customElementNames = [];
