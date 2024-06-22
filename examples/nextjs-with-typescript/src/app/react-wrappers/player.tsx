@@ -1,29 +1,30 @@
 'use client';
-import {
-  MediaController,
-  MediaControlBar,
-  MediaTimeRange,
-  MediaTimeDisplay,
-  MediaLoadingIndicator,
-  MediaVolumeRange,
-  MediaPlaybackRateButton,
-  MediaPlayButton,
-  MediaSeekBackwardButton,
-  MediaSeekForwardButton,
-  MediaMuteButton,
-  MediaCaptionsButton,
-  MediaAirplayButton,
-  MediaPipButton,
-  MediaFullscreenButton,
-  MediaPosterImage,
-} from 'media-chrome/react';
+
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 
 const chromeStyles = {
   '--media-primary-color': 'white',
 };
 
-const toggleBool = (prev: boolean|undefined) => !prev;
+const toggleBool = (prev: boolean | undefined) => !prev;
+
+const MediaAirplayButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaAirplayButton), { ssr: false });
+const MediaCaptionsButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaCaptionsButton), { ssr: false });
+const MediaControlBar = dynamic(() => import('media-chrome/react').then(mod => mod.MediaControlBar), { ssr: false });
+const MediaController = dynamic(() => import('media-chrome/react').then(mod => mod.MediaController), { ssr: false });
+const MediaFullscreenButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaFullscreenButton), { ssr: false });
+const MediaLoadingIndicator = dynamic(() => import('media-chrome/react').then(mod => mod.MediaLoadingIndicator), { ssr: false });
+const MediaMuteButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaMuteButton), { ssr: false });
+const MediaPipButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaPipButton), { ssr: false });
+const MediaPlayButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaPlayButton), { ssr: false });
+const MediaPlaybackRateButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaPlaybackRateButton), { ssr: false });
+const MediaPosterImage = dynamic(() => import('media-chrome/react').then(mod => mod.MediaPosterImage), { ssr: false });
+const MediaSeekBackwardButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaSeekBackwardButton), { ssr: false });
+const MediaSeekForwardButton = dynamic(() => import('media-chrome/react').then(mod => mod.MediaSeekForwardButton), { ssr: false });
+const MediaTimeDisplay = dynamic(() => import('media-chrome/react').then(mod => mod.MediaTimeDisplay), { ssr: false });
+const MediaTimeRange = dynamic(() => import('media-chrome/react').then(mod => mod.MediaTimeRange), { ssr: false });
+const MediaVolumeRange = dynamic(() => import('media-chrome/react').then(mod => mod.MediaVolumeRange), { ssr: false });
 
 export const Player = () => {
   const [mounted, setMounted] = useState<boolean>(true);
